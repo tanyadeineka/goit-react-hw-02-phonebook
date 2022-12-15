@@ -1,7 +1,7 @@
 .filterContainer {
     margin-right: auto;
     margin-left: auto;
-    width: 300px;
+    width: 400px;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -12,5 +12,5 @@
     font-size: 18px;
 }
 .inputFilter {
-    width: 100%;
+    width: 95%;
 }
