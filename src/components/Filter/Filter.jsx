@@ -3,9 +3,9 @@ import css from "./Filter.module.css";
 
 export const Filter = ({ filter, handleChange }) => {
     return (
-        <div>
+        <div className={css.filterContainer}>
             <label className={css.labelFilter}>Find contacts by name</label>
-            <input className={filter.name} type="text" name="filter" value={filter} onChange={handleChange} />
+            <input className={css.inputFilter} type="text" name="filter" value={filter} onChange={handleChange} />
         </div>
     )
 }
