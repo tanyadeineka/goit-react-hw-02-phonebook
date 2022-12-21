@@ -26,13 +26,13 @@ export class App extends Component {
     const id = nanoid();
     const name = event.name;
     const number = event.number;
-    const contactsLists = [...this.state.contacts];
-    if (contactsLists.findIndex(contact => name === contact.name) !== -1) {
-      alert(`${name} is already in contacts.`)
+    const {contacts} = this.state;
+    if (contacts.find(contact => name === contact.name)) {
+      alert(`${name} is already in contacts.`);
     } else {
-      contactsLists.push({name, id, number})
+      contacts.push({ name, id, number });
     }
-    this.setState({ contacts: contactsLists });
+    this.setState({ contacts: contacts });
   };
 
   getFilteredContacts = () => {
