@@ -26,7 +26,7 @@ export class App extends Component {
     const number = event.number;
     const {contacts} = this.state;
     if (contacts.find(contact => name === contact.name)) {
-      alert(`${name} is already in contacts.`);
+      return alert(`${name} is already in contacts.`);
     }
     const contact = { id, name, number };
     this.setState(({ contacts }) => ({
