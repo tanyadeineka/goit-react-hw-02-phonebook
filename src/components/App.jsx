@@ -13,8 +13,6 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   handleChange = event => {
@@ -29,10 +27,11 @@ export class App extends Component {
     const {contacts} = this.state;
     if (contacts.find(contact => name === contact.name)) {
       alert(`${name} is already in contacts.`);
-    } else {
-      contacts.push({ name, id, number });
     }
-    this.setState({ contacts: contacts });
+    const contact = { id, name, number };
+    this.setState(({ contacts }) => ({
+        contacts: [contact, ...contacts],
+    }));
   };
 
   getFilteredContacts = () => {
